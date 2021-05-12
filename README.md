@@ -8,6 +8,10 @@ applies a function on every element in an array. A new array is then returned
 
 ### How it works:
 
+- Takes a callback function that is called once for each element.
+- Calls the callback function and gets the result of the operation run on the element
+- Returns a new array with the results> The .map() method creates a new array and doesn't mutate the old array.
+
 ### Syntax:
 
 ```jsx
@@ -133,6 +137,10 @@ returns a new array created from all elements that pass a certain test preformed
 
 ### How it works:
 
+- Will take a test function
+- Returns a new array containing the elements that matches the set test
+- Returns an empty array if there are no matches
+
 ### Syntax:
 
 ```jsx
@@ -251,7 +259,29 @@ sorts the elements of an array and returns the new sorted array.
 
 ### Example 1:
 
+sort in alphabetical order in ascending order
+
+```jsx
+let animals = [
+    'cat', 'dog', 'elephant', 'bee', 'ant'
+];
+animals.sort();
+
+console.log(animals);//[ 'ant', 'bee', 'cat', 'dog', 'elephant' ]
+```
+
 ### Example 2:
+
+sort in alphabetical order in descending order
+
+```jsx
+let animals = [
+    'cat', 'dog', 'elephant', 'bee', 'ant'
+];
+animals.sort((a,b) => b - a);
+
+console.log(animals)// [ 'elephant', 'dog', 'cat', 'bee', 'ant' ]
+```
 
 ### Example 3:
 
@@ -263,9 +293,40 @@ slice method can takes two arguments, first is start index and second is end ind
 
 ### How it works:
 
+### Syntax:
+
+```jsx
+array.slice(start, end)
+```
+
 ### Example 1:
 
+get the last two users of the array
+
+```jsx
+//  An array of objects
+const users = [{name: 'Pete', id: 1}, {name: 'Rich', id: 2}, {name: 'Johnny', id: 3}];
+
+// Copy users from a particular index
+const lastUsers = users.slice(1);
+
+// Output users from the selected range
+console.log(lastUsers);
+
+//output: [{"name":"Rich","id":2},{"name":"Johnny","id":3}]
+```
+
 ### Example 2:
+
+return an array of 4 and 5
+
+```jsx
+const numbers = [2, 3, 4, 5, 6];
+const sliced = numbers.slice(2,4);
+console.log(sliced);
+
+//output: Array [4,5]
+```
 
 ### Example 3:
 
@@ -277,7 +338,35 @@ pop method removes the last element from an array and returns that removed eleme
 
 ### How it works:
 
+- Removes the element at the last index of the array.
+- Mutates the parent array reducing the length.
+- Returns the last element.
+
+### Syntax:
+
+```jsx
+array.pop()
+```
+
 ### Example 1:
+
+remove an item in a list and return the list
+
+```jsx
+let items = ['Cedar', 'Fruits', 'Table'];
+
+// Remove last item in list
+let newItems = items.pop();
+
+// Output modified list
+console.log(items);
+
+// Output removed item
+console.log(newItems)
+
+//output: ["Cedar","Fruits"]
+//output: Table
+```
 
 ### Example 2:
 
@@ -287,13 +376,53 @@ pop method removes the last element from an array and returns that removed eleme
 
 ### Description of what method does:
 
-similar to pop method, shift removes the first element from an array and returns that element.
+This method takes out the first element from an array and returns it. The shift method mutates the array during this process, reducing its length.
 
 ### How it works:
 
+- Removes the element at the beginning of the array.
+- Mutates the parent array reducing the length.
+- Returns the removed element
+
+### Syntax:
+
+```jsx
+array.shift()
+```
+
 ### Example 1:
 
+remove the first number in the list
+
+```jsx
+// List of numbers
+const list = [10, 20, 30, 40, 50]
+
+// Remove first number
+const newList = list.shift()
+
+// Output result
+console.log(newList)
+
+//output: 10
+```
+
 ### Example 2:
+
+remove the index element from an array
+
+```jsx
+// New array
+const numbers = ['ten', 'one', 'two', 'three', 'four'];
+
+// Remove the first element
+numbers.shift();
+
+// Output result
+console.log(numbers);
+
+//output: ["one","two","three","four"]
+```
 
 ### Example 3:
 
@@ -301,13 +430,49 @@ similar to pop method, shift removes the first element from an array and returns
 
 ### Description of what method does:
 
-push adds one or more elements to the end of an array and returns the updated length of array.
+This methods adds one or more value to the last position of an array. This method mutates the array returning the new length of the array.
 
 ### How it works:
 
+- Takes a value or values as arguments.
+- Adds the value(s) to the end of the array.
+- Returns the new length of the array.
+
+### Syntax:
+
+```jsx
+array.push(element)
+```
+
 ### Example 1:
 
+add a new value to the end of the array
+
+```jsx
+// List of numbers
+const numbers = [1, 2, 3, 4, 5];
+
+// Add a number to the end
+numbers.push(6);
+
+// Output result
+console.log(numbers);//[1,2,3,4,5,6]
+```
+
 ### Example 2:
+
+add a new item to todo list
+
+```jsx
+// List of todos
+const todos = [{name: 'Clean room', complete: false}];
+
+// Add todo item
+todos.push({name: 'Cook food', complete: true})
+
+// Output updated todo list
+console.log(todos)//[{"name":"Clean room","complete":false},{"name":"Cook food","complete":true}]
+```
 
 ### Example 3:
 
@@ -319,9 +484,50 @@ similar to push method, unshift method add one or more elements to the front of 
 
 ### How it works:
 
+### Syntax:
+
+```jsx
+const newArray = oldArray.unshift(item1, item2, ...itemN)
+```
+
 ### Example 1:
 
+add new items to the the beginning of the array
+
+```jsx
+// Array of items
+const items = ['Cedar', 'Fruits', 'Table'];
+
+// Add new items to array
+items.unshift('wine', 'glass');
+
+// Display modified array
+console.log(items);//["wine","glass","Cedar","Fruits","Table"]
+```
+
 ### Example 2:
+
+add items to cart
+
+```jsx
+// Array of objects in cart
+const cart = [
+  {
+    item: "bread",
+    price: 2000,
+  },
+  {
+    item:"milk",
+    price: 1000
+  }
+]
+
+// Add item to cart
+cart.unshift({item: "eggs", price: 500})
+
+// Display modified array
+console.log(cart)//[{"item":"eggs","price":500},{"item":"bread","price":2000},{"item":"milk","price":1000}]
+```
 
 ### Example 3:
 
@@ -332,6 +538,17 @@ similar to push method, unshift method add one or more elements to the front of 
 return true or false whether an array contains a certain element, which is passed as an argument in the includes function.
 
 ### How it works:
+
+- Takes a value as an argument
+- Checks the array if the value exists within the array
+- Returns `true` or `false`.
+- If no argument is provided, it returns `false`.
+
+### Syntax:
+
+```jsx
+array.includes(searchValue, startIndex)
+```
 
 ### Example 1:
 
@@ -345,6 +562,22 @@ const includesWaldo = names.includes('waldo');
 
 ### Example 2:
 
+Check if the array contains a certain month
+
+```jsx
+// Weekdays
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+// Random month
+const month = 'May';
+
+// Verify inclusion in array
+const isDay = days.includes(month);
+
+// Output result
+console.log(isDay);
+```
+
 ### Example 3:
 
 ## indexOf()
@@ -357,17 +590,74 @@ Returns the index of first (least) occurrence of element within the array which 
 
 ### Example 1:
 
+locate the values of a give value
+
+```jsx
+var array = [2, 9, 9];
+array.indexOf(2);     // 0
+array.indexOf(7);     // -1
+array.indexOf(9, 2);  // 2
+array.indexOf(2, -1); // -1
+array.indexOf(2, -3); // 0
+```
+
 ### Example 2:
 
+find all the occurrences of an element
+
+```jsx
+var indices = [];
+var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+var element = 'a';
+var idx = array.indexOf(element);
+while (idx != -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices);
+// [0, 2, 4]
+```
+
 ### Example 3:
+
+find if an element exists in the array or not and update the array
+
+```jsx
+function updateVegetablesCollection (veggies, veggie) {
+    if (veggies.indexOf(veggie) === -1) {
+        veggies.push(veggie);
+        console.log('New veggies collection is : ' + veggies);
+    } else if (veggies.indexOf(veggie) > -1) {
+        console.log(veggie + ' already exists in the veggies collection.');
+    }
+}
+
+var veggies = ['potato', 'tomato', 'chillies', 'green-pepper'];
+
+updateVegetablesCollection(veggies, 'spinach');
+// New veggies collection is : potato,tomato,chillies,green-pepper,spinach
+updateVegetablesCollection(veggies, 'spinach');
+// spinach already exists in the veggies collection.;
+```
 
 ## every()
 
 ### Description of what method does:
 
-checks if all items in an array pass a condition
+The every method checks that each element in an array passes a set test. This method will return true if all the elements pass the set. Once an element that fails the test is found, the method returns false.
 
 ### How it works:
+
+- Takes a callback function that implements a test
+- Checks if all the elements pass the test
+- Returns `true` if `every` element passes the test.
+- Returns `false` an element fails test
+
+### Syntax:
+
+```jsx
+const isCorrect = array.every(callback[,thisArg])
+```
 
 ### Example 1:
 
@@ -381,4 +671,30 @@ const goodOverallRating = ratings.every( rating => rating >= 3 );
 
 ### Example 2:
 
+compare two arrays
+
+```jsx
+function arraysEqual(arr1, arr2) {
+  return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+}
+
+alert( arraysEqual([1, 2], [1, 2])); // true
+```
+
 ### Example 3:
+
+test all items in an array of objects using either the object keys
+
+```jsx
+// Array of students
+const students = [{name: 'John', score: 50} , {name: 'Peter', score: 60}, {name: 'James', score: 55}];
+
+// Threshold Score
+const passScore = 50;
+
+// Test students
+const studentsPassed = students.every(student => student.score >= passScore);
+
+// Display status
+console.log(studentsPassed)//true
+```
