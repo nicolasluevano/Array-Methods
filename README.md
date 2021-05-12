@@ -1,6 +1,5 @@
 # Array Methods
 
-Describe the map() array method and give an example when to use it
 
 # map()
 
