@@ -1,5 +1,7 @@
 # Array Methods
 
+Describe the map() array method and give an example when to use it
+
 # map()
 
 ### Description of what method does:
@@ -21,6 +23,10 @@ let newArr = oldArr.map((val, index, arr) => {
 	//return element to new Array
 })
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -84,6 +90,10 @@ let result = arr.reduce(callback);
 let result = arr.reduce(callback, initValue);
 ```
 
+### Time Complexity:
+
+0(n)
+
 ### Example 1:
 
 find the sum of all the values of an array
@@ -146,6 +156,10 @@ returns a new array created from all elements that pass a certain test preformed
 ```jsx
 let newArr = oldArr.filter(callback);
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -219,6 +233,10 @@ passes a [callback function](https://www.freecodecamp.org/news/javascript-callb
 - Index (optional) - The current element's index number
 - Array (optional) - The array object to which the current element belongs
 
+### Time Complexity:
+
+0(n)
+
 ### Example 1:
 
 Get the sum of all the values in the array:
@@ -256,6 +274,10 @@ function myFunction(item, index, arr) {
 sorts the elements of an array and returns the new sorted array.
 
 ### How it works:
+
+### Time Complexity:
+
+0(n log(n))
 
 ### Example 1:
 
@@ -298,6 +320,10 @@ slice method can takes two arguments, first is start index and second is end ind
 ```jsx
 array.slice(start, end)
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -348,6 +374,10 @@ pop method removes the last element from an array and returns that removed eleme
 array.pop()
 ```
 
+### Time Complexity:
+
+0(1)
+
 ### Example 1:
 
 remove an item in a list and return the list
@@ -389,6 +419,10 @@ This method takes out the first element from an array and returns it. The shift 
 ```jsx
 array.shift()
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -444,6 +478,10 @@ This methods adds one or more value to the last position of an array. This metho
 array.push(element)
 ```
 
+### Time Complexity:
+
+0(1)
+
 ### Example 1:
 
 add a new value to the end of the array
@@ -489,6 +527,10 @@ similar to push method, unshift method add one or more elements to the front of 
 ```jsx
 const newArray = oldArray.unshift(item1, item2, ...itemN)
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -550,6 +592,10 @@ return true or false whether an array contains a certain element, which is passe
 array.includes(searchValue, startIndex)
 ```
 
+### Time Complexity:
+
+0(n)
+
 ### Example 1:
 
 Check if the array includes an item with the string ‘waldo’.
@@ -587,6 +633,10 @@ console.log(isDay);
 Returns the index of first (least) occurrence of element within the array which is given, or -1 if none is found. It also take second argument which is optional and specify from where to start.
 
 ### How it works:
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
@@ -658,6 +708,10 @@ The every method checks that each element in an array passes a set test. This me
 ```jsx
 const isCorrect = array.every(callback[,thisArg])
 ```
+
+### Time Complexity:
+
+0(n)
 
 ### Example 1:
 
